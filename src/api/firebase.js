@@ -25,15 +25,15 @@ import {
     getDocs
 } from 'firebase/firestore';
 
-// Firebase configuration - from Firebase Console (Web App)
+// Firebase configuration - from environment variables
 const firebaseConfig = {
-    apiKey: "AIzaSyC7nqyffCc_TeOkDSKrBSWoUEBD3Pr8ZP8",
-    authDomain: "cinebook-e46f4.firebaseapp.com",
-    projectId: "cinebook-e46f4",
-    storageBucket: "cinebook-e46f4.firebasestorage.app",
-    messagingSenderId: "466923942915",
-    appId: "1:466923942915:web:797eb62fb6a9ba4ff60a36",
-    measurementId: "G-M6341L31QZ"
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID,
+    measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
