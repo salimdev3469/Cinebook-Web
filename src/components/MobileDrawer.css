@@ -1,0 +1,144 @@
+/* Mobile Drawer Toggle Button */
+.drawer-toggle {
+    display: none;
+    position: fixed;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: var(--radius-full);
+    color: var(--text-white);
+    z-index: 1000;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.drawer-toggle:hover {
+    background: var(--primary-red);
+}
+
+/* Overlay */
+.drawer-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+}
+
+.drawer-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Drawer Panel */
+.drawer {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    max-width: 80vw;
+    height: 100vh;
+    background: var(--surface-dark);
+    z-index: 1002;
+    transform: translateX(100%);
+    transition: transform var(--transition-normal) ease-out;
+    overflow-y: auto;
+}
+
+.drawer.open {
+    transform: translateX(0);
+}
+
+/* Drawer Header */
+.drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.drawer-logo {
+    height: 32px;
+    object-fit: contain;
+}
+
+.drawer-close {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--text-grey);
+    cursor: pointer;
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+}
+
+.drawer-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
+}
+
+/* Drawer Navigation */
+.drawer-nav {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-md);
+}
+
+.drawer-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    color: var(--text-grey);
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.drawer-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-white);
+}
+
+.drawer-link.active {
+    background: rgba(229, 9, 20, 0.1);
+    color: var(--primary-red);
+}
+
+.drawer-link svg {
+    flex-shrink: 0;
+}
+
+/* Mobile Only - Show drawer components */
+@media (max-width: 768px) {
+    .drawer-toggle {
+        display: flex;
+    }
+
+    .drawer-overlay {
+        display: block;
+    }
+
+    .drawer {
+        display: block;
+    }
+}

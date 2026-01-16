@@ -1,0 +1,16 @@
+.home-page {
+    min-height: 100vh;
+    background: var(--background-black);
+}
+
+.movie-sections {
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-2xl);
+}
+
+@media (max-width: 768px) {
+    .movie-sections {
+        padding-bottom: 80px;
+        /* Space for bottom nav */
+    }
+}

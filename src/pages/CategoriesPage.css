@@ -1,0 +1,75 @@
+.categories-page {
+    min-height: 100vh;
+    background: var(--background-black);
+    padding: var(--spacing-lg);
+    padding-top: 90px;
+}
+
+.categories-page.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.back-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-white);
+    transition: color var(--transition-fast);
+}
+
+.back-link:hover {
+    color: var(--primary-red);
+}
+
+.page-header h1 {
+    font-size: 1.5rem;
+}
+
+/* Genres List */
+.genres-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    max-width: 600px;
+}
+
+.genre-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--surface-dark);
+    border-radius: var(--radius-md);
+    color: var(--text-white);
+    transition: all var(--transition-fast);
+}
+
+.genre-item:hover {
+    background: var(--field-color);
+    transform: translateX(4px);
+}
+
+.genre-name {
+    font-size: 1.1rem;
+}
+
+.genre-item svg {
+    color: var(--text-grey);
+}
+
+@media (max-width: 768px) {
+    .categories-page {
+        padding-bottom: 100px;
+    }
+}

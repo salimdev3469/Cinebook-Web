@@ -1,0 +1,144 @@
+.chat-message {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) 0;
+    animation: fadeIn var(--transition-normal) ease-out;
+}
+
+.chat-message.user {
+    justify-content: flex-end;
+}
+
+/* Avatar */
+.message-avatar {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.message-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+}
+
+/* Content */
+.message-content {
+    max-width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.message-bubble {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-xl);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* User bubble */
+.chat-message.user .message-bubble {
+    background: #2C2C2E;
+    border-bottom-right-radius: 0;
+}
+
+/* Assistant bubble */
+.chat-message.assistant .message-bubble {
+    background: #1C1C1E;
+    border-top-left-radius: 0;
+}
+
+/* Movie Suggestions */
+.message-movies {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.movie-suggestion {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+}
+
+.suggestion-poster {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+}
+
+.suggestion-info {
+    flex: 1;
+}
+
+.suggestion-info h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.suggestion-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.action-btn {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1.5px solid var(--text-white);
+    border-radius: var(--radius-full);
+    color: var(--text-white);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.action-btn:hover {
+    background: var(--primary-red);
+    border-color: var(--primary-red);
+}
+
+/* Typing Indicator */
+.message-bubble.typing {
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.typing-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.typing-dots span {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-red);
+    border-radius: var(--radius-full);
+    opacity: 0.4;
+    animation: typing 1s infinite;
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
